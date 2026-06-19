@@ -1,0 +1,156 @@
+/* Сброс стандартных отступов и полей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Стили для header */
+.header {
+    background: #2c3e50;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Основные стили для навигации */
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin: 0;
+    padding: 0 2rem;
+    flex-wrap: nowrap; /* Запрещаем перенос на новую строку */
+}
+
+/* Стили для пунктов меню */
+.nav-list li {
+    display: inline-block;
+    white-space: nowrap; /* Запрещаем перенос текста */
+}
+
+/* Стили для ссылок */
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+/* Эффекты при наведении */
+.nav-list a:hover {
+    color: #3498db;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+/* Активная ссылка */
+.nav-list a.active {
+    color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+    border-bottom: 2px solid #e74c3c;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .header {
+        padding: 0.8rem 0;
+    }
+
+    .nav-list {
+        gap: 1.5rem;
+        padding: 0 1rem;
+        justify-content: space-around; /* Равномерное распределение на мобильных */
+    }
+
+    .nav-list a {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-list {
+        gap: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .nav-list a {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
+/* Дополнительные улучшения */
+.nav-list a:focus {
+    outline: 2px solid #3498db;
+    outline-offset: 2px;
+}
+
+/* Плавная анимация для всего header */
+.header {
+    transition: all 0.3s ease;
+}
+
+/* Убираем подчеркивание у всех ссылок */
+.nav-list a {
+    text-decoration: none;
+}
+
+/* Контейнер для ограничения максимальной ширины (опционально) */
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.btn-assign {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.btn-assign:hover {
+    background-color: #218838;
+}
+
+.coach-info {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    border-left: 4px solid #007bff;
+}
+
+.coach-details {
+    font-size: 14px;
+}
+
+.coach-section {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #e9ecef;
+    border-radius: 5px;
+}
+
+.coach-badge {
+    background: #007bff;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    margin-left: 10px;
+}

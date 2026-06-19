@@ -1,0 +1,390 @@
+/* Основные стили */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+/* Стили для вкладок */
+.tabs {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 2px solid #e0e0e0;
+    background: #f8f9fa;
+    border-radius: 8px 8px 0 0;
+    padding: 0 20px;
+}
+
+.tab-link {
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #495057;
+    font-weight: 500;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    margin: 0 5px;
+}
+
+.tab-link:hover {
+    color: #007bff;
+    background: #e9ecef;
+    border-radius: 5px 5px 0 0;
+}
+
+.tab-link.active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+    background: white;
+}
+
+/* Стили для контента вкладок */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Стили для секций форм */
+.form-section {
+    margin-bottom: 40px;
+    padding: 25px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    background: #f8f9fa;
+}
+
+.form-section h3 {
+    color: #495057;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Стили для форм */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="email"],
+.form-group input[type="file"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+/* Чекбоксы */
+.form-group input[type="checkbox"] {
+    margin-right: 10px;
+    transform: scale(1.2);
+}
+
+.form-group label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+/* Кнопки */
+.btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.btn-danger {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #c82333;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Стили для сообщений */
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.error-message {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+.info-message {
+    background: #cce7ff;
+    color: #004085;
+    border: 1px solid #b3d7ff;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 15px 0;
+    font-weight: 500;
+}
+
+/* Предпросмотр изображений */
+#imagePreview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+#previewImage {
+    max-width: 200px;
+    max-height: 200px;
+    border: 2px solid #dee2e6;
+    border-radius: 6px;
+    padding: 5px;
+    background: white;
+}
+
+/* Стили для таблицы тренировок */
+.workouts-table {
+    margin-top: 20px;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.workouts-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.workouts-table th,
+.workouts-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.workouts-table th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+    border-bottom: 2px solid #dee2e6;
+}
+
+.workouts-table tr:hover {
+    background: #f8f9fa;
+}
+
+.workouts-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Сообщение об отсутствии данных */
+.no-data {
+    text-align: center;
+    color: #6c757d;
+    font-style: italic;
+    padding: 40px 20px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    margin: 20px 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .tab-link {
+        margin: 0;
+        border-radius: 0;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .tab-content {
+        padding: 20px;
+    }
+
+    .form-section {
+        padding: 15px;
+    }
+
+    .workouts-table {
+        font-size: 14px;
+    }
+
+    .workouts-table th,
+    .workouts-table td {
+        padding: 10px 8px;
+    }
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-content.active {
+    animation: fadeIn 0.3s ease;
+}
+
+.form-section {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Стили для состояний загрузки */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 10px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Улучшения для доступности */
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+.btn:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+/* Стили для обязательных полей */
+.form-group label:after {
+    content: " *";
+    color: #dc3545;
+}
+
+.form-group label:has(+ input:not([required])):after,
+.form-group label:has(+ select:not([required])):after,
+.form-group label:has(+ textarea:not([required])):after {
+    content: "";
+}
+
+/* admin.css */
+.form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 14px;
+    resize: vertical;
+    min-height: 80px;
+}
+
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Стили для разных размеров textarea */
+.form-group textarea[rows="3"] {
+    min-height: 60px;
+}
+
+.form-group textarea[rows="5"] {
+    min-height: 100px;
+}
+
+.form-group textarea[rows="8"] {
+    min-height: 160px;
+}

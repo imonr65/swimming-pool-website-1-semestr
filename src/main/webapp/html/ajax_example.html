@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+</head>
+<body>
+<script>
+    function renderTable(users, table) {
+        let innerHtml = '<tr>\n' +
+            '<th>ID</th>' +
+            '<th>FirstName</th>' +
+            '<th>LastName</th>' +
+            '<th>Email</th>' +
+            '<th>Password</th>' +
+            '<th>Phone</th>' +
+            '</tr>';
+        for (let i = 0; i < users.length; i++) {
+            innerHtml += '<tr>';
+            innerHtml += '<td>' + users[i]['id'] + '</td>';
+            innerHtml += '<td>' + users[i]['firstName'] + '</td>';
+            innerHtml += '<td>' + users[i]['lastName'] + '</td>';
+            innerHtml += '<td>' + users[i]['email'] + '</td>';
+            innerHtml += '<td>' + users[i]['password'] + '</td>';
+            innerHtml += '<td>' + users[i]['phone'] + '</td>';
+            innerHtml += '</tr>';
+        }
+
+        table.html(innerHtml);
+    }
+
+    function sendUser(oneName, twoName, email, phone, password) {
+        let data = {
+            "firstName": oneName,
+            "lastName": twoName,
+            "email": email,
+            "phone": phone,
+            "password": password
+        };
+        $.ajax({
+            type: "POST",
+            url: "/ajax",
+            data: JSON.stringify(data),
+            success: function (response) {
+                renderTable(response, $('#table'))
+            },
+            dataType: "json",
+            contentType: "application/json"
+        })
+    }
+</script>
+
+<div>
+    <input type="text" id="first_name" placeholder="firstName">
+    <input type="text" id="last_name" placeholder="lastName">
+    <input type="text" id="email" placeholder="Email">
+    <input type="text" id="phone" placeholder="Phone_Number">
+    <input type="text" id="password" placeholder="Password">
+
+    <button onclick="sendUser(
+        $('#first_name').val(),
+        $('#last_name').val(),
+        $('#email').val(),
+        $('#phone').val(),
+        $('#password').val(),
+    )">Отправить
+    </button>
+</div>
+<div>
+    <table id="table"></table>
+</div>
+</body>
+</html>
